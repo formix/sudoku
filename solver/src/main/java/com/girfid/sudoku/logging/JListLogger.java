@@ -1,0 +1,36 @@
+package com.girfid.sudoku.logging;
+
+import javax.swing.JList;
+import javax.swing.SwingUtilities;
+
+public class JListLogger implements Logger {
+
+	private LoggerModel messages;
+	private int index;
+
+	public JListLogger(JList<String> list) {
+		this.messages = new LoggerModel();
+		list.setModel(this.messages);
+		this.index = 0;
+	}
+
+	@Override
+	public void info(final String text) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				index++;
+				messages.add(String.format("%05d: %s", index, text));
+			}
+		});
+	}
+
+	public void clear() {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				messages.clear();
+				index = 0;
+			}
+		});
+	}
+
+}
