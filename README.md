@@ -15,7 +15,8 @@ It takes under 2 seconds 80% of the time to solve an evil grid. Sometimes,
 the resolver get stuck in a local optimum and will take more than 10 seconds 
 or more to resolve. In these rare cases, the output message list (bottom 
 section) may becomes too big and past 10000 messages, it slows down the whole
-application. This is not a core solver algorithm issue but a UI problem.
+application. This is not a core solver algorithm issue but a UI problem. When it
+happens, cancel the execution, press the "Clear" button and try solving again.
 
 ## How To Start The Program
 
