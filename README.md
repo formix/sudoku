@@ -74,8 +74,8 @@ Clears all writable cells. Keep frozen cells in place.
 
 #### Empty
 
-Empties the whole grid.
+Empties the whole grid and the message log.
 
-### Log Messages
+### Message Log
 
 The bottom list displays messages generated while solving the grid.
