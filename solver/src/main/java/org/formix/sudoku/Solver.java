@@ -1,5 +1,7 @@
 package org.formix.sudoku;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -85,8 +87,12 @@ public class Solver implements Runnable {
 	}
 
 	public Sudoku solve(Sudoku sudoku, GridUpdaterCallback callBack) {
+		PrintWriter stats = null;
 		try {
 			this.solving = true;
+
+			stats = new PrintWriter(new FileWriter("stats.txt"));
+			
 
 			logger.info(Messages.getString("Solver.11", Calendar
 					.getInstance().getTime()));
@@ -94,16 +100,20 @@ public class Solver implements Runnable {
 			Sudoku bestSudoku = sudoku;
 			Sudoku currSudoku = bestSudoku.clone();
 
+			int threshold = 20;
+			stats.println("loop\tthreshold\tanger\tempty_cells");
 			
 			int loopCount = 0;
 			while (!currSudoku.isComplete() && this.solving) {
 
-				loopCount++;
-				this.anger++;
 				int bestEmptyCellCount = bestSudoku.countEmptyCells();
 				int currEmptyCellCount = this.fillEmptyCells(currSudoku);
+
+				stats.println(String.format("%d\t%d\t%d\t%d", loopCount, 
+						threshold, anger, bestEmptyCellCount));
+				
 				if (currEmptyCellCount > 0) {
-					if (this.anger < 25) {
+					if (this.anger < threshold) {
 						currEmptyCellCount += this.retractWeighted(currSudoku);
 					} else {
 						currEmptyCellCount += this.retractRandom(currSudoku);
@@ -111,10 +121,7 @@ public class Solver implements Runnable {
 				}
 
 				if (currEmptyCellCount < bestEmptyCellCount) {
-					this.anger -= 5;
-					if (this.anger < 30) {
-						this.anger = 0;
-					}
+					this.anger -= (5);
 					logger.info(String.format(
 							Messages.getString("Solver.4"), //$NON-NLS-1$
 							bestEmptyCellCount, currEmptyCellCount));
@@ -126,6 +133,13 @@ public class Solver implements Runnable {
 				
 				bestSudoku = currSudoku;
 				currSudoku = currSudoku.clone();
+				
+				loopCount++;
+				this.anger++;
+				
+				if (loopCount % 200 == 0) {
+					threshold -= 50;
+				}
 			}
 			
 			logger.info(String.format(
@@ -135,13 +149,17 @@ public class Solver implements Runnable {
 			callBack.updateGrid(currSudoku.clone());
 			return currSudoku;
 			
-		} catch (CloneNotSupportedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			this.solving = false;
 
 			logger.info(Messages.getString("Solver.12", Calendar
 					.getInstance().getTime()));
+			
+			if (stats != null) {
+				stats.close();
+			}
 		}
 
 		return null;
