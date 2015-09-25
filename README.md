@@ -8,9 +8,9 @@ consider that I do not have to bother to solve a single Sudoku anymore
 since I solved them all with this program. I used an operational research
 approach to build the resolution algorithm.
 
-![Sudoku Solver](https://cloud.githubusercontent.com/assets/8600014/10090085/137b2aae-62f9-11e5-8ae3-cda2ca52b1b7.png)
-
 [Version 1.0.0](https://github.com/formix/sudoku/releases/tag/1.0.0)
+
+![Sudoku Solver](https://cloud.githubusercontent.com/assets/8600014/10090085/137b2aae-62f9-11e5-8ae3-cda2ca52b1b7.png)
 
 ## How To Start The Program
 
