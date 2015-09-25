@@ -2,6 +2,14 @@
 
 *A Java Sudoku Solver*
 
+![Sudoku Solver](https://cloud.githubusercontent.com/assets/8600014/10090085/137b2aae-62f9-11e5-8ae3-cda2ca52b1b7.png)
+
+# Releases
+
+* [1.0.0](https://github.com/formix/sudoku/releases/tag/1.0.0)
+
+# Introduction
+
 Born from my frustration of not being able to solve even a simple sudoku 
 myself, I did this solver without looking at any existing algorithms. I
 consider that I do not have to bother to solve a single Sudoku anymore
@@ -27,7 +35,7 @@ CTRL-Clicking the cell you want to get fixed.
 
 #### Level DropDown
 
-Allows selection of the level of difficulty of the downloaded grid.
+Allows selection of the level of difficulty for the downloaded grid.
 
 #### Download
 
