@@ -11,12 +11,11 @@ since I solved them all with this program.
 
 ![Sudoku Solver](https://cloud.githubusercontent.com/assets/8600014/10090085/137b2aae-62f9-11e5-8ae3-cda2ca52b1b7.png)
 
-It takes between 2 and 10 seconds to solve an evil level sudoku. Sometimes, 
-the resolver get stuck in a local optimum and will take up to 30 seconds 
+It takes under 2 seconds 80% of the time to solve an evil grid. Sometimes, 
+the resolver get stuck in a local optimum and will take more than 10 seconds 
 or more to resolve. In these rare cases, the output message list (bottom 
-section) may becomes too big and past 10000 messages, it slows down the 
-whole application. This is not a core solver algorithm issue but a UI 
-problem.
+section) may becomes too big and past 10000 messages, it slows down thewhole
+application. This is not a core solver algorithm issue but a UI problem.
 
 ## How To Start The Program
 
