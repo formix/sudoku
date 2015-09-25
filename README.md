@@ -5,8 +5,7 @@
 Born from my frustration of not being able to solve even a simple sudoku 
 myself, I did this solver without looking at any existing algorithms. I
 consider that I do not have to bother to solve a single Sudoku anymore
-since I solved them all with this program. I used an operational research
-approach to build the resolution algorithm.
+since I solved them all with this program.
 
 [Version 1.0.0](https://github.com/formix/sudoku/releases/tag/1.0.0)
 
