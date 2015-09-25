@@ -18,6 +18,9 @@ section) may becomes too big and past 10000 messages, it slows down the whole
 application. This is not a core solver algorithm issue but a UI problem. When it
 happens, cancel the execution, press the "Clear" button and try solving again.
 
+The algorithm is based on [Markov Decision Process](https://en.wikipedia.org/wiki/Markov_decision_process)
+principle.
+
 ## How To Start The Program
 
 ### From Source
