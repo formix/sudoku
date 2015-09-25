@@ -4,8 +4,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
-import com.girfid.sudoku.Cell;
-import com.girfid.sudoku.Sudoku;
+import org.formix.sudoku.Cell;
+import org.formix.sudoku.Sudoku;
 
 import java.awt.Color;
 import java.awt.Dimension;

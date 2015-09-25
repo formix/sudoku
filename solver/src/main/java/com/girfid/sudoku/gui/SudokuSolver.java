@@ -15,6 +15,12 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import org.formix.sudoku.Cell;
+import org.formix.sudoku.GridUpdaterCallback;
+import org.formix.sudoku.Solver;
+import org.formix.sudoku.Sudoku;
+import org.formix.sudoku.SudokuDownloader;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -22,11 +28,6 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-import com.girfid.sudoku.Cell;
-import com.girfid.sudoku.GridUpdaterCallback;
-import com.girfid.sudoku.Solver;
-import com.girfid.sudoku.SudokuDownloader;
-import com.girfid.sudoku.Sudoku;
 import com.girfid.sudoku.logging.JListLogger;
 
 import javax.swing.JComboBox;

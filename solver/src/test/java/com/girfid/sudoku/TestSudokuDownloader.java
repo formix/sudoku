@@ -1,5 +1,8 @@
 package com.girfid.sudoku;
 
+import org.formix.sudoku.Sudoku;
+import org.formix.sudoku.SudokuData;
+import org.formix.sudoku.SudokuDownloader;
 import org.junit.Test;
 
 public class TestSudokuDownloader {

@@ -43,7 +43,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.girfid.sudoku.gui.SudokuSolver</mainClass>
+							<mainClass>org.formix.sudoku.gui.SudokuSolver</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

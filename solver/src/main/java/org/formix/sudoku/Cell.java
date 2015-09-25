@@ -1,4 +1,4 @@
-package com.girfid.sudoku;
+package org.formix.sudoku;
 
 import java.util.Set;
 

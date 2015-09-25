@@ -1,4 +1,4 @@
-package com.girfid.sudoku;
+package org.formix.sudoku;
 
 import java.io.FileReader;
 import java.io.FileWriter;

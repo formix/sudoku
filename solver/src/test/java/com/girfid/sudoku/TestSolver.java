@@ -1,5 +1,6 @@
 package com.girfid.sudoku;
 
+import org.formix.sudoku.Solver;
 import org.junit.Test;
 
 public class TestSolver {

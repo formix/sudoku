@@ -3,6 +3,7 @@ package com.girfid.sudoku;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.formix.sudoku.Sudoku;
 import org.junit.Assert;
 import org.junit.Test;
 
