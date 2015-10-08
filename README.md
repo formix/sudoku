@@ -4,12 +4,22 @@
 
 Born from my frustration of not being able to solve even a simple sudoku 
 myself, I did this solver without looking at any existing algorithms. I
-consider that I do not have to bother to solve a single Sudoku anymore
+consider that I do not have to bother to solve a single sudoku anymore
 since I solved them all with this program.
 
 [Version 1.0.0](https://github.com/formix/sudoku/releases/tag/1.0.0)
 
 ![Sudoku Solver](https://cloud.githubusercontent.com/assets/8600014/10090085/137b2aae-62f9-11e5-8ae3-cda2ca52b1b7.png)
+
+It takes under 2 seconds 80% of the time to solve an evil grid. Sometimes, 
+the resolver get stuck in a local optimum and will take more than 10 seconds 
+or more to resolve. In these rare cases, the output message list (bottom 
+section) may becomes too big and past 10000 messages, it slows down the whole
+application. This is not a core solver algorithm issue but a UI problem. When it
+happens, cancel the execution, press the "Clear" button and try solving again.
+
+The algorithm is based on [Markov Decision Process](https://en.wikipedia.org/wiki/Markov_decision_process)
+principle.
 
 ## How To Start The Program
 
@@ -23,8 +33,8 @@ From the command line, run `javaw -jar sudokusolver-1.0.0-jwd.jar`
 
 ## Usage
 
-You can create your own Sudoku by entering your base numbers and then
-CTRL-Clicking the cell you want to get fixed.
+You can create your own sudoku by entering your base numbers and then
+CTRL-Clicking the cell you want to freeze.
 
 ### Top Button Bar
 
@@ -34,7 +44,7 @@ Allows selection of the level of difficulty for the downloaded grid.
 
 #### Download
 
-Gets a Sudoku from [websudoku.com](http://like.websudoku.com) of the 
+Gets a sudoku grid from [websudoku.com](http://like.websudoku.com) of the 
 selected level.
 
 #### Generate
@@ -67,8 +77,8 @@ Clears all writable cells. Keep frozen cells in place.
 
 #### Empty
 
-Empties the whole grid.
+Empties the whole grid and the message log.
 
-### Log Messages
+### Message Log
 
 The bottom list displays messages generated while solving the grid.
