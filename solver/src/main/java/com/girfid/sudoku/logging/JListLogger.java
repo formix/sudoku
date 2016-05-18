@@ -20,6 +20,9 @@ public class JListLogger implements Logger {
 			public void run() {
 				index++;
 				messages.add(String.format("%05d: %s", index, text));
+				if (messages.getSize() > 1000) {
+					
+				}
 			}
 		});
 	}

@@ -28,7 +28,9 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import com.girfid.sudoku.logging.ConsoleLogger;
 import com.girfid.sudoku.logging.JListLogger;
+import com.girfid.sudoku.logging.Logger;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -61,7 +63,7 @@ public class SudokuSolver {
 	private JPanel generatePanel;
 	private JSplitPane splitPane;
 	private SudokuGrid sudokuGrid;
-	private JListLogger logger;
+	private Logger logger;
 	private JScrollPane scrollPane;
 	private JList<String> list;
 
@@ -89,6 +91,11 @@ public class SudokuSolver {
 		fileChooser = new JFileChooser();
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		this.logger = new JListLogger(this.list);
+//		this.logger = new Logger() {
+//			@Override public void info(String text) {}
+//			@Override public void clear() {}
+//		};
+//		this.logger = new ConsoleLogger();
 		this.solver = new Solver(this.logger);
 		this.callBack = new GridUpdaterCallback(SOLVER_REFRESH_RATE) {
 			@Override

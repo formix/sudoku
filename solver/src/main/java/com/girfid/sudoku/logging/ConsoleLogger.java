@@ -7,5 +7,9 @@ public class ConsoleLogger implements Logger {
 	public void info(String text) {
 		System.out.println(text);
 	}
+	
+	@Override
+	public void clear() {
+	}
 
 }

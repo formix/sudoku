@@ -63,16 +63,8 @@ public class Solver implements Runnable {
 			sudoku.load(this.filePath);
 			logger.info(Messages.getString("Solver.0")); //$NON-NLS-1$
 			logger.info(sudoku.toString());
-
-			long startTime = System.nanoTime();
 			Sudoku solvedSudoku = this.solve(sudoku);
-			long endTime = System.nanoTime();
-
 			logger.info(solvedSudoku.toString());
-			long duration = endTime - startTime;
-			double durationTime = duration / 1000000000.0;
-			logger.info(String.format(Messages.getString("Solver.1"), //$NON-NLS-1$
-					durationTime));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -88,6 +80,18 @@ public class Solver implements Runnable {
 	}
 
 	public Sudoku solve(Sudoku sudoku, GridUpdaterCallback callBack) {
+		long startTime = System.nanoTime();
+		Sudoku finalSudoku = this.internalSolve(sudoku, callBack);
+		long endTime = System.nanoTime();
+		long duration = endTime - startTime;
+		double durationTime = duration / 1000000000.0;
+		logger.info(String.format(Messages.getString("Solver.1"), //$NON-NLS-1$
+				durationTime));
+		return finalSudoku;
+	}
+	
+	
+	private Sudoku internalSolve(Sudoku sudoku, GridUpdaterCallback callBack) {
 		PrintWriter stats = null;
 		try {
 			this.solving = true;
@@ -164,7 +168,7 @@ public class Solver implements Runnable {
 		}
 
 		return null;
-	}
+	}	
 
 	private int fillEmptyCells(Sudoku currSudoku) {
 		List<Cell> cells = currSudoku.getWritableEmptyCells();
