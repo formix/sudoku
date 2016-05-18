@@ -15,6 +15,7 @@ import com.girfid.sudoku.logging.Logger;
 public class Solver implements Runnable {
 
 	private static final int RETRACT_CELL_COUNT = 3;
+	private static final int INITIAL_THREASHOLD = 20;
 
 	private String filePath;
 	private Logger logger;
@@ -100,7 +101,7 @@ public class Solver implements Runnable {
 			Sudoku bestSudoku = sudoku;
 			Sudoku currSudoku = bestSudoku.clone();
 
-			int threshold = 20;
+			int threshold = INITIAL_THREASHOLD;
 			stats.println("loop\tthreshold\tanger\tempty_cells");
 			
 			int loopCount = 0;
@@ -184,6 +185,29 @@ public class Solver implements Runnable {
 		}
 		return false;
 	}
+	
+	private int retractRandom(Sudoku currSudoku) {
+		List<Cell> cells = currSudoku.getWritableCells();
+		List<Cell> filledCells = new ArrayList<Cell>();
+		for (Cell cell : cells) {
+			if (cell.getValue() > 0) {
+				filledCells.add(cell);
+			}
+		}
+		
+		int retractions = RETRACT_CELL_COUNT + (this.anger / 50);
+		if (retractions > filledCells.size()) {
+			retractions = filledCells.size();
+		}
+		
+		Collections.shuffle(filledCells);
+		for (int i = 0; i < retractions; i++) {
+			filledCells.get(i).setValue(0);
+		}
+		
+		return retractions;
+	}
+	
 
 	private void sortCellsByAllowedValueCount(List<Cell> cells) {
 		if (cells.size() < 81) {
@@ -237,29 +261,6 @@ public class Solver implements Runnable {
 		
 		for (int i = 0; i < retractions; i++) {
 			weightedCells.get(i).getCell().setValue(0);
-		}
-		
-		return retractions;
-	}
-	
-	
-	private int retractRandom(Sudoku currSudoku) {
-		List<Cell> cells = currSudoku.getWritableCells();
-		List<Cell> filledCells = new ArrayList<Cell>();
-		for (Cell cell : cells) {
-			if (cell.getValue() > 0) {
-				filledCells.add(cell);
-			}
-		}
-		
-		int retractions = RETRACT_CELL_COUNT + (this.anger / 50);
-		if (retractions > filledCells.size()) {
-			retractions = filledCells.size();
-		}
-		
-		Collections.shuffle(filledCells);
-		for (int i = 0; i < retractions; i++) {
-			filledCells.get(i).setValue(0);
 		}
 		
 		return retractions;
