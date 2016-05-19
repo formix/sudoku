@@ -136,9 +136,7 @@ public class Solver implements Runnable {
 							bestEmptyCellCount, currEmptyCellCount));
 				}
 				
-				//bestSudoku = currSudoku;
-				//currSudoku = currSudoku.clone();
-				bestSudoku.loadArray(currSudoku.toArray());
+				bestSudoku.copy(currSudoku);
 				
 				loopCount++;
 				this.anger++;

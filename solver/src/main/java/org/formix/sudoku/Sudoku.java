@@ -13,8 +13,6 @@ import com.girfid.sudoku.logging.Logger;
 
 public class Sudoku implements Cloneable {
 
-	private static byte[] xfer = new byte[81];
-	
 	private Cell[][] grid;
 
 	public Sudoku() {
@@ -278,33 +276,14 @@ public class Sudoku implements Cloneable {
 		return null;
 	}
 	
-	byte[] toArray() {
-		byte[] data = xfer;
+	public void copy(Sudoku source) {
 		for (int row = 0; row < 9; row++) {
 			for (int col = 0; col < 9; col++) {
 				Cell cell = this.grid[row][col];
-				int index = row * 9 + col; 
-				data[index] = (byte)cell.getValue();
-				if (!cell.isEditable()) {
-					data[index] = (byte)(data[index] * -1);
-				}
-			}
-		}
-		return data;
-	}
-	
-	
-	void loadArray(byte[] data) {
-		for (int row = 0; row < 9; row++) {
-			for (int col = 0; col < 9; col++) {
-				int index = row * 9 + col; 
-				Cell cell = this.grid[row][col];
-				int value = Math.abs(data[index]);
 				cell.setEditable(true);
-				cell.setValue(value);
-				if (data[index] < 0) {
-					cell.setEditable(false);
-				}
+				Cell sourceCell = source.grid[row][col];
+				cell.setValue(sourceCell.getValue());
+				cell.setEditable(sourceCell.isEditable());
 			}
 		}
 	}
