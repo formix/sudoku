@@ -95,10 +95,10 @@ public class Solver implements Runnable {
 		PrintWriter stats = null;
 		try {
 			this.solving = true;
+			this.anger = 0;
 
 			stats = new PrintWriter(new FileWriter("stats.txt"));
 			
-
 			logger.info(Messages.getString("Solver.11", Calendar
 					.getInstance().getTime()));
 
