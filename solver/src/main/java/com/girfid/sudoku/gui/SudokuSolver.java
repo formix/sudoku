@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-import com.girfid.sudoku.logging.ConsoleLogger;
 import com.girfid.sudoku.logging.JListLogger;
 import com.girfid.sudoku.logging.Logger;
 
