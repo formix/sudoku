@@ -275,4 +275,16 @@ public class Sudoku implements Cloneable {
 	public Logger getLogger() {
 		return null;
 	}
+	
+	public void copy(Sudoku source) {
+		for (int row = 0; row < 9; row++) {
+			for (int col = 0; col < 9; col++) {
+				Cell cell = this.grid[row][col];
+				cell.setEditable(true);
+				Cell sourceCell = source.grid[row][col];
+				cell.setValue(sourceCell.getValue());
+				cell.setEditable(sourceCell.isEditable());
+			}
+		}
+	}
 }
