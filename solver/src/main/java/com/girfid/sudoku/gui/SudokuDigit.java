@@ -58,12 +58,10 @@ public class SudokuDigit extends JTextField {
 	protected void initialize() {
 		this.setHorizontalAlignment(CENTER);
 		this.addFocusListener(new FocusListener() {
-			@Override
 			public void focusLost(FocusEvent e) {
 				select(0, 0);
 			}
 
-			@Override
 			public void focusGained(FocusEvent e) {
 				select(0, getText().length());
 			}

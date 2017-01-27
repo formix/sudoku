@@ -14,7 +14,6 @@ public class JListLogger implements Logger {
 		this.index = 0;
 	}
 
-	@Override
 	public void info(final String text) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {

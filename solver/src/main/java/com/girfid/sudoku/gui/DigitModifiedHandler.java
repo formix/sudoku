@@ -15,7 +15,6 @@ public abstract class DigitModifiedHandler implements DocumentListener {
 		return digit;
 	}
 
-	@Override
 	public void insertUpdate(DocumentEvent e) {
 		this.modified(digit);
 	}
@@ -24,7 +23,6 @@ public abstract class DigitModifiedHandler implements DocumentListener {
 		this.modified(digit);
 	}
 
-	@Override
 	public void changedUpdate(DocumentEvent e) {
 	}
 

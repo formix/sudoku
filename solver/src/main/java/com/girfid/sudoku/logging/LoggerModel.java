@@ -40,12 +40,10 @@ public class LoggerModel extends AbstractListModel<String> {
 		this.fireIntervalRemoved(this, 0, this.messages.size());
 	}
 	
-	@Override
 	public int getSize() {
 		return messages.size();
 	}
 
-	@Override
 	public String getElementAt(int index) {
 		return messages.get(index);
 	}

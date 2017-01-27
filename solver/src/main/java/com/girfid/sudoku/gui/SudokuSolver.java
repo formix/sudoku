@@ -100,7 +100,6 @@ public class SudokuSolver {
 			@Override
 			public void updateGrid(final Sudoku sudoku) {
 				SwingUtilities.invokeLater(new Runnable() {
-					@Override
 					public void run() {
 						sudokuGrid.setSudokuGrid(sudoku);
 					}
@@ -119,7 +118,6 @@ public class SudokuSolver {
 
 		KeyboardFocusManager.getCurrentKeyboardFocusManager()
 				.addKeyEventDispatcher(new KeyEventDispatcher() {
-					@Override
 					public boolean dispatchKeyEvent(KeyEvent e) {
 						if ((e.getKeyCode() & KeyEvent.VK_CONTROL) == KeyEvent.VK_CONTROL) {
 							if (e.getID() == KeyEvent.KEY_PRESSED) {
