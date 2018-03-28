@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import com.girfid.sudoku.logging.Logger;
+import org.formix.sudoku.logging.Logger;
 
 public class Sudoku implements Cloneable {
 

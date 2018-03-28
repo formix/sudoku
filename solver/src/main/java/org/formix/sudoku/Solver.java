@@ -9,13 +9,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
-import com.girfid.sudoku.logging.ConsoleLogger;
-import com.girfid.sudoku.logging.Logger;
+import org.formix.sudoku.logging.ConsoleLogger;
+import org.formix.sudoku.logging.Logger;
 
 public class Solver implements Runnable {
 
 	private static final int RETRACT_CELL_COUNT = 3;
-	private static final int INITIAL_THREASHOLD = 20;
+	private static final int INITIAL_THRESHOLD = 20;
 
 	private String filePath;
 	private Logger logger;
@@ -105,7 +105,7 @@ public class Solver implements Runnable {
 			Sudoku bestSudoku = sudoku;
 			Sudoku currSudoku = bestSudoku.clone();
 
-			int threshold = INITIAL_THREASHOLD;
+			int threshold = INITIAL_THRESHOLD;
 			stats.println("loop\tthreshold\tanger\tempty_cells");
 			
 			int loopCount = 0;

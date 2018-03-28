@@ -32,7 +32,7 @@
 					<archive>
 						<index>true</index>
 						<manifest>
-							<mainClass>com.girfid.sudoku.Solver</mainClass>
+							<mainClass>org.formix.sudoku.Solver</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

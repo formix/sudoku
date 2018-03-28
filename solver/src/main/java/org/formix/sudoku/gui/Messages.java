@@ -1,4 +1,4 @@
-package com.girfid.sudoku.gui;
+package org.formix.sudoku.gui;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;

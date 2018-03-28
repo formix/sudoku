@@ -1,4 +1,4 @@
-package com.girfid.sudoku.logging;
+package org.formix.sudoku.logging;
 
 import java.util.LinkedList;
 import java.util.List;

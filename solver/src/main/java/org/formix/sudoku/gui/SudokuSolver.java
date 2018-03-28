@@ -1,4 +1,4 @@
-package com.girfid.sudoku.gui;
+package org.formix.sudoku.gui;
 
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -20,6 +20,8 @@ import org.formix.sudoku.GridUpdaterCallback;
 import org.formix.sudoku.Solver;
 import org.formix.sudoku.Sudoku;
 import org.formix.sudoku.SudokuDownloader;
+import org.formix.sudoku.logging.JListLogger;
+import org.formix.sudoku.logging.Logger;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -27,9 +29,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-
-import com.girfid.sudoku.logging.JListLogger;
-import com.girfid.sudoku.logging.Logger;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;

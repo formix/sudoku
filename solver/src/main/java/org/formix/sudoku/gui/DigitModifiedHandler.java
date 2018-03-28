@@ -1,4 +1,4 @@
-package com.girfid.sudoku.gui;
+package org.formix.sudoku.gui;
 
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;

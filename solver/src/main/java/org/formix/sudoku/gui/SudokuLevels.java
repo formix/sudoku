@@ -1,4 +1,4 @@
-package com.girfid.sudoku.gui;
+package org.formix.sudoku.gui;
 
 public enum SudokuLevels {
 

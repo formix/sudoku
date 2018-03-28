@@ -1,4 +1,4 @@
-package com.girfid.sudoku.logging;
+package org.formix.sudoku.logging;
 
 import javax.swing.JList;
 import javax.swing.SwingUtilities;
